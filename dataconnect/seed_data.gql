@@ -1,0 +1,80 @@
+mutation CreateSeedData @transaction @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      displayName: "demouser1",
+      email: "demouser1@example.com",
+      createdAt: "2024-04-26T12:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      displayName: "demouser2",
+      email: "demouser2@example.com",
+      createdAt: "2024-04-26T12:00:00Z"
+    }
+  ])
+  product_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440002",
+      name: "Example Product 1",
+      description: "This is an example product.",
+      price: 25.99,
+      createdAt: "2024-04-26T12:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440003",
+      name: "Example Product 2",
+      description: "This is another example product.",
+      price: 49.99,
+      createdAt: "2024-04-26T12:00:00Z"
+    }
+  ])
+  order_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440004",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      orderDate: "2024-04-27T10:00:00Z",
+      status: "Shipped",
+      totalAmount: 25.99
+    },
+        {
+      id: "550e8400-e29b-41d4-a716-446655440005",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      orderDate: "2024-04-28T11:00:00Z",
+      status: "Pending",
+      totalAmount: 49.99
+    }
+  ])
+    cartItem_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440006",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      productId: "550e8400-e29b-41d4-a716-446655440002",
+      createdAt: "2024-04-27T10:00:00Z",
+      quantity: 1
+    },
+        {
+      id: "550e8400-e29b-41d4-a716-446655440007",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      productId: "550e8400-e29b-41d4-a716-446655440003",
+      createdAt: "2024-04-28T11:00:00Z",
+      quantity: 2
+    }
+  ])
+  orderItem_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440008",
+      orderId: "550e8400-e29b-41d4-a716-446655440004",
+      productId: "550e8400-e29b-41d4-a716-446655440002",
+      priceAtPurchase: 25.99,
+      quantity: 1
+    },
+        {
+      id: "550e8400-e29b-41d4-a716-446655440009",
+      orderId: "550e8400-e29b-41d4-a716-446655440005",
+      productId: "550e8400-e29b-41d4-a716-446655440003",
+      priceAtPurchase: 49.99,
+      quantity: 1
+    }
+  ])
+}
