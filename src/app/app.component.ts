@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FirebaseApp } from '@angular/fire/app';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +6,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
-  title = 'shopifi';
-   constructor(private readonly firebaseApp: FirebaseApp) {}
+export class AppComponent {
 
-  ngOnInit() {
-    console.log('🔥 Firebase App initialized:', this.firebaseApp.name);
-  }
 }
