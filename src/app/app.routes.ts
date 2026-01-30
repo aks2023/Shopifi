@@ -9,7 +9,7 @@ export const routes: Routes = [
         component: PostLoginComponent,
         pathMatch: 'full'
     },
-      {
+    {
         path: APP_ROUTES.PRELOGIN,
         component: PreLoginComponent,
         pathMatch: 'full'
@@ -34,7 +34,7 @@ export const routes: Routes = [
         path: APP_ROUTES.PROFILESHELL,
         loadChildren: () => import('./feature-module/wishlist/wishlist-routing.module').then(m => m.WishlistRoutingModule)
     },
-       {
+    {
         path: APP_ROUTES.PROFILESHELL,
         loadChildren: () => import('./feature-module/login/login-routing.module').then(m => m.LoginRoutingModule)
     },
