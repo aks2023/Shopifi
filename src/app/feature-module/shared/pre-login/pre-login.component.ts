@@ -43,11 +43,9 @@ export class PreLoginComponent {
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private readonly router: Router) {}
 
-  ngOnInit(): void {
-    // Component initialization
-  }
+  ngOnInit() {}
 
   @HostListener('window:scroll', [])
   onScroll(): void {
