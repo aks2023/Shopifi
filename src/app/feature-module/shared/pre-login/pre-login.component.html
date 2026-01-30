@@ -1,1 +1,155 @@
-<p>pre-login works!</p>
+<div class="dashboard-wrapper">
+  <!-- Animated background elements -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">🛍️</span>
+        <span class="logo-text">Shopifi</span>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost" (click)="navigateToLogin()">
+          Log In
+        </button>
+        <button class="btn btn-primary" (click)="navigateToSignup()">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Trusted by 10,000+ merchants</span>
+      </div>
+
+      <h1 class="hero-title">
+        Your Store,
+        <span class="gradient-text">Reimagined</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        The complete e-commerce platform that turns browsers into buyers.
+        Powerful features, beautiful design, effortless management.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-lg" (click)="navigateToSignup()">
+          <span>Start Free Trial</span>
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="btn btn-outline btn-lg" (click)="navigateToLogin()">
+          <span>Sign In</span>
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">2.5M+</div>
+          <div class="stat-label">Orders Processed</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">Support</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <div class="card-icon">📊</div>
+        <div class="card-content">
+          <div class="card-title">Sales Up</div>
+          <div class="card-value">+42%</div>
+        </div>
+      </div>
+
+      <div class="floating-card card-2">
+        <div class="card-icon">⭐</div>
+        <div class="card-content">
+          <div class="card-title">Rating</div>
+          <div class="card-value">4.9/5</div>
+        </div>
+      </div>
+
+      <div class="floating-card card-3">
+        <div class="card-icon">🚀</div>
+        <div class="card-content">
+          <div class="card-title">Fast Setup</div>
+          <div class="card-value">5 min</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-header">
+      <h2 class="section-title">Everything You Need to Succeed</h2>
+      <p class="section-subtitle">
+        Built for modern merchants who demand excellence
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features; let i = index"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+        <div class="feature-shine"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Transform Your Business?</h2>
+      <p class="cta-subtitle">
+        Join thousands of successful merchants already using Shopifi
+      </p>
+
+      <div class="cta-buttons">
+        <button class="btn btn-primary btn-xl" (click)="navigateToSignup()">
+          Create Free Account
+        </button>
+        <button class="btn btn-ghost btn-xl" (click)="navigateToLogin()">
+          I Already Have an Account
+        </button>
+      </div>
+
+      <p class="cta-note">
+        No credit card required • 14-day free trial • Cancel anytime
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">🛍️</span>
+        <span class="logo-text">Shopifi</span>
+      </div>
+      <p class="footer-text">© 2024 Shopifi. Built for merchants who dream big.</p>
+    </div>
+  </footer>
+</div>
